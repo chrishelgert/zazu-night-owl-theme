@@ -1,6 +1,6 @@
 {
-  "name": "Monochrome theme",
+  "name": "Night Owl theme",
   "version": "1.0.0",
-  "description": "A monochrome theme for Zazu",
+  "description": "A dark theme for Zazu based on night-owl-vscode-theme",
   "stylesheet": "dist/main.css"
 }

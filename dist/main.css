@@ -1,11 +1,19 @@
 :root {
-  --light: rgb(255, 255, 255);
-  --grayLight: rgb(239, 240, 235);
-  --gray: rgb(222, 226, 230);
-  --grayDark: rgb(73, 80, 87);
-  --dark: rgb(52, 58, 64);
   --fontSize: 14px;
   --iconSize: 30px;
+  --background: #011627;
+  --font: #dee2e6;
+  --inputBackground: #0b263b;
+  --inputColor: #fff;
+  --border: rgba(95, 126, 151, 0.17647);
+  --inactiveColor: #5f7e97;
+  --hoverBackground: #011627;
+  --hoverColor: #fff;
+  --focusBackground: #010d18;
+  --focusColor: #fff;
+  --activeBackground: #010d18;
+  --activeColor: #fff;
+  --contrast: #7e57c2;
 }
 
 html,
@@ -27,20 +35,20 @@ body {
  * Styling for theme-preview
  */
 .playbook {
-  background-color: rgb(52, 58, 64);
-  background-color: var(--dark);
+  background-color: #010d18;
+  background-color: var(--focusBackground);
 }
 
 .github-corner > svg {
-  color: rgb(73, 80, 87);
-  color: var(--grayDark);
-  fill: rgb(52, 58, 64);
-  fill: var(--dark);
+  color: #fff;
+  color: var(--focusColor);
+  fill: #010d18;
+  fill: var(--focusBackground);
 }
 
 #install {
-  color: rgb(255, 255, 255);
-  color: var(--light);
+  color: #dee2e6;
+  color: var(--font);
   font-size: 1.25em;
 }
 
@@ -48,8 +56,9 @@ body {
  * Styling for the app
  */
 #zazu {
-  background-color: rgb(52, 58, 64);
-  background-color: var(--dark);
+  background-color: #011627;
+  background-color: var(--background);
+  border: 0;
   cursor: move;
   max-height: 400px;
   overflow: hidden;
@@ -58,28 +67,43 @@ body {
   -webkit-app-region: drag;
 }
 
+#zazu div::after {
+  color: #7e57c2;
+  color: var(--contrast);
+  content: "❯";
+  display: block;
+  font-size: 32px;
+  position: absolute;
+  top: 14px;
+  left: 15px;
+}
+
 /**
  * command input field
  */
 #zazu input {
-  background-color: transparent;
+  background-color: #0b263b;
+  background-color: var(--inputBackground);
+  caret-color: #7e57c2;
+  caret-color: var(--contrast);
   border: 0;
-  color: rgb(255, 255, 255);
-  color: var(--light);
+  color: #fff;
+  color: var(--inputColor);
   cursor: auto;
   display: block;
   font-size: 2em;
   outline: none;
-  padding: 15px;
+  padding: 15px 15px 15px 45px;
   -webkit-app-region: no-drag;
+  width: 100%;
 }
 
 /**
  * results under the searchfield,
  */
 .results {
-  border-top: 1px solid rgb(73, 80, 87);
-  border-top: 1px solid var(--grayDark);
+  border-top: 1px solid rgba(95, 126, 151, 0.17647);
+  border-top: 1px solid var(--border);
   display: flex;
   flex-direction: row;
 }
@@ -89,8 +113,8 @@ body {
  */
 #preview {
   border: 0;
-  border-left: 1px solid rgb(73, 80, 87);
-  border-left: 1px solid var(--grayDark);
+  border-left: 1px solid rgba(95, 126, 151, 0.17647);
+  border-left: 1px solid var(--border);
 }
 
 /**
@@ -100,35 +124,44 @@ body {
 .results ul {
   margin: 0;
   height: calc(400px - 63px);
+  list-style: none;
   overflow: hidden;
   padding: 0;
   width: 50%;
+}
 
-  &:last-child {
-    width: 100%;
-  }
+.results ul:last-child {
+  width: 100%;
 }
 
 .results li {
   border-left: 1px solid transparent;
-  border-bottom: 1px solid rgb(73, 80, 87);
-  border-bottom: 1px solid var(--grayDark);
+  border-bottom: 1px solid rgba(95, 126, 151, 0.17647);
+  border-bottom: 1px solid var(--border);
+  color: #5f7e97;
+  color: var(--inactiveColor);
   cursor: pointer;
-  display: block;
   height: 50px;
   line-height: 50px;
+  overflow: hidden;
   padding: 5px;
   width: 100%;
   -webkit-app-region: no-drag;
+}
 
-  &:last-child {
-    border-bottom: 0;
-  }
+.results li::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.results li:last-child {
+  border-bottom: 0;
 }
 
 .results li .icon {
-  color: rgb(239, 240, 235);
-  color: var(--grayLight);
+  color: #dee2e6;
+  color: var(--font);
   float: left;
   height: 30px;
   height: var(--iconSize);
@@ -150,27 +183,40 @@ body {
 }
 
 .results li h2 {
-  color: rgb(255, 255, 255);
-  color: var(--light);
   font-size: 1.3em;
   line-height: 25px;
+}
 
-  &:last-child {
-    line-height: 40px;
-  }
+.results li > h2:last-child {
+  line-height: 40px;
 }
 
 .results li h3 {
-  color: rgb(239, 240, 235);
-  color: var(--grayLight);
   font-size: 1em;
   line-height: 15px;
 }
 
-.results li.active,
 .results li:hover {
-  background-color: rgb(73, 80, 87);
-  background-color: var(--grayDark);
+  background-color: #011627;
+  background-color: var(--hoverBackground);
+  color: #fff;
+  color: var(--hoverColor);
+}
+
+.results li.active,
+.results li.active:hover {
+  background-color: #010d18;
+  background-color: var(--activeBackground);
+  color: #fff;
+  color: var(--activeColor);
+}
+
+.results li:focus,
+.results li:hover:focus {
+  background-color: #010d18;
+  background-color: var(--focusBackground);
+  color: #fff;
+  color: var(--focusColor);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 {
-  "name": "zazu-monochrome-theme",
+  "name": "zazu-night-owl-theme",
   "version": "1.0.0",
-  "description": "A monochrome theme for Zazu.",
+  "description": "A dark theme for Zazu based on night-owl-vscode-theme.",
   "main": "dist/main.css",
   "scripts": {
     "build": "postcss -u postcss-preset-env -o dist/main.css -m dist/main.css.map src/main.css",
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com/chrishelgert/zazu-monochrome-theme.git"
+    "url": "git@github.com/chrishelgert/zazu-night-owl-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/chrishelgert/zazu-monochrome-theme/issues"
+    "url": "https://github.com/chrishelgert/zazu-night-owl-theme/issues"
   },
   "devDependencies": {
     "husky": "^0.14.0",
