@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "husky": "^0.14.0",
-    "postcss-cli": "^5.0.1",
+    "postcss-cli": "^6.0.0",
     "postcss-preset-env": "^5.1.0",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.0.0"
