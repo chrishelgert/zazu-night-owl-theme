@@ -22,7 +22,7 @@
     "url": "https://github.com/chrishelgert/zazu-night-owl-theme/issues"
   },
   "devDependencies": {
-    "husky": "^0.14.3",
+    "husky": "^1.1.2",
     "postcss-cli": "^5.0.1",
     "postcss-preset-env": "^5.3.0",
     "stylelint": "^9.3.0",
