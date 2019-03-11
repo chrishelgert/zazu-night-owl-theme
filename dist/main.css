@@ -5,7 +5,7 @@
   --font: #dee2e6;
   --inputBackground: #0b263b;
   --inputColor: #fff;
-  --border: rgba(95, 126, 151, 0.17647);
+  --border: rgba(95,126,151,0.17647);
   --inactiveColor: #5f7e97;
   --hoverBackground: #011627;
   --hoverColor: #fff;
@@ -102,7 +102,7 @@ body {
  * results under the searchfield,
  */
 .results {
-  border-top: 1px solid rgba(95, 126, 151, 0.17647);
+  border-top: 1px solid rgba(95,126,151,0.17647);
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: row;
@@ -113,7 +113,7 @@ body {
  */
 #preview {
   border: 0;
-  border-left: 1px solid rgba(95, 126, 151, 0.17647);
+  border-left: 1px solid rgba(95,126,151,0.17647);
   border-left: 1px solid var(--border);
 }
 
@@ -136,7 +136,7 @@ body {
 
 .results li {
   border-left: 1px solid transparent;
-  border-bottom: 1px solid rgba(95, 126, 151, 0.17647);
+  border-bottom: 1px solid rgba(95,126,151,0.17647);
   border-bottom: 1px solid var(--border);
   color: #5f7e97;
   color: var(--inactiveColor);
